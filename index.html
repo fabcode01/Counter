@@ -31,8 +31,11 @@
             border-radius: 5px;
             padding: 30px;
             color: black;
+            transition: 0.5s all;
+            
            
         }
+
 
         .bcont{
             display: flex;
@@ -47,7 +50,7 @@
             
             color: rgb(3, 26, 46);
             display: inline-block;
-            padding: 20px;
+            padding: 15px;
             border-radius: 5px;
             margin-top: 25px;
             font-size: 1.7em;
@@ -61,7 +64,7 @@
         button.remove, button.resetar{
             color: rgb(3, 26, 46);
             display: inline-block;
-            padding: 20px;
+            padding: 15px;
             border-radius: 5px;
             border: none;
             margin-top: 25px;
@@ -71,11 +74,8 @@
             transition: all 0.5s;
         }
 
-        button.add:hover, button.remove:hover, button.resetar:hover{
-            background-color: rgb(190, 172, 113);
-        }
-
         button.add:active, button.remove:active, button.resetar:active{
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.568);
             transform: scale(1.1);
         }
 
@@ -132,6 +132,7 @@
         }
 
         function add(){
+   
 
             if (Number(ncont.innerHTML) == 0){
                 ncont.className = 'black'
