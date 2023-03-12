@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <style>
+        *{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        #container{
+            background-color: rgb(68, 67, 67);
+            width: 400px;
+            height: 300px;
+            margin: auto;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1{
+            text-align: center;
+            padding-top: 15px;
+            color: aliceblue;
+        }
+
+        p{
+            font-size: 1.9em;
+            display: block;
+            width: 30%;
+            margin: auto;
+            border-radius: 5px;
+            padding: 30px;
+            color: black;
+            background-color: aliceblue;
+        }
+
+        button.add{
+            color: aliceblue;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 25px;
+            font-size: 2em;
+            background-color: rgb(27, 27, 27);
+            cursor: pointer;
+        }
+
+        button.remove{
+            color: aliceblue;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 25px;
+            font-size: 2em;
+            background-color: rgb(27, 27, 27);
+            cursor: pointer;
+        }
+
+        button.add:hover, button.remove:hover{
+            background-color: rgb(0, 0, 0);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Contador</h1>
+        <p class="contador">0</p>
+
+        <button class="add" onclick="add()">+</button>
+        <button class="remove" onclick="remove()">-</button>
+    </div>
+
+
+    <script>
+        var ncont = document.querySelector("p.contador")
+       
+        function remove(){
+            ncont.innerHTML --
+
+        }
+
+        function add(){
+        
+            ncont.innerHTML ++
+        }
+
+
+
+        
+
+
+
+    </script>
+</body>
+</html>
