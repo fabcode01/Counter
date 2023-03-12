@@ -10,56 +10,81 @@
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
 
-        #container{
-            background-color: rgb(68, 67, 67);
-            width: 400px;
-            height: 300px;
-            margin: auto;
-            border-radius: 10px;
+        body{
             text-align: center;
         }
 
         h1{
+            font-size: 5em;
             text-align: center;
             padding-top: 15px;
-            color: aliceblue;
+            color: black;
         }
 
         p{
-            font-size: 1.9em;
-            display: block;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bolder;
+            text-align: center;
+            font-size: 4.9em;
             width: 30%;
             margin: auto;
             border-radius: 5px;
             padding: 30px;
             color: black;
-            background-color: aliceblue;
+           
+        }
+
+        .bcont{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+
+            margin: auto;
         }
 
         button.add{
-            color: aliceblue;
+            
+            color: rgb(3, 26, 46);
             display: inline-block;
             padding: 20px;
             border-radius: 5px;
             margin-top: 25px;
-            font-size: 2em;
-            background-color: rgb(27, 27, 27);
+            font-size: 1.7em;
+            background-color: rgb(255, 230, 149);
             cursor: pointer;
+            transition: all 0.5s;
+            border: none;
         }
 
-        button.remove{
-            color: aliceblue;
+
+        button.remove, button.resetar{
+            color: rgb(3, 26, 46);
             display: inline-block;
             padding: 20px;
             border-radius: 5px;
+            border: none;
             margin-top: 25px;
-            font-size: 2em;
-            background-color: rgb(27, 27, 27);
+            font-size: 1.7em;
+            background-color: rgb(255, 230, 149);
             cursor: pointer;
+            transition: all 0.5s;
         }
 
-        button.add:hover, button.remove:hover{
-            background-color: rgb(0, 0, 0);
+        button.add:hover, button.remove:hover, button.resetar:hover{
+            background-color: rgb(190, 172, 113);
+        }
+
+        button.add:active, button.remove:active, button.resetar:active{
+            transform: scale(1.1);
+        }
+
+        .red{
+            color: rgb(230, 0, 0);
+        }
+
+        .green{
+            color: green;
         }
 
 
@@ -69,24 +94,56 @@
 <body>
     <div id="container">
         <h1>Contador</h1>
-        <p class="contador">0</p>
 
-        <button class="add" onclick="add()">+</button>
-        <button class="remove" onclick="remove()">-</button>
+        <div class="bcont">
+            <button class="add" onclick="add()">adicionar</button>
+            <button class="resetar" onclick="reset()">resetar</button>
+            <button class="remove" onclick="remove()">remover</button>
+        </div>
+
+        <p id="contador">0</p>
+
     </div>
 
 
     <script>
-        var ncont = document.querySelector("p.contador")
+        var ncont = document.querySelector("p#contador")
+        
+       
        
         function remove(){
+       
+            if (Number(ncont.innerHTML) == 0){
+                ncont.className = 'black'
+            }
+                
+            if (0 >= Number(ncont.innerHTML)){
+             ncont.className = 'red'
+             ncont.innerHTML --
+        } else {
             ncont.innerHTML --
 
+        }}
+
+
+        function reset(){
+            ncont.className = ''
+            ncont.innerHTML = 0
         }
 
         function add(){
-        
-            ncont.innerHTML ++
+
+            if (Number(ncont.innerHTML) == 0){
+                ncont.className = 'black'
+            }
+            if (0 <= Number(ncont.innerHTML)){
+                ncont.innerHTML ++
+                ncont.className = 'green'
+
+            }else{
+                ncont.innerHTML ++
+            }
+            
         }
 
 
